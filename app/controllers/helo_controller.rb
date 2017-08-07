@@ -1,5 +1,9 @@
 class HeloController < ApplicationController
     def index
+        
+        @title = "Viewサンプル"
+        @msg = "コントローラに用意した値です"
+        
         # if params['msg'] != nil then
         #     msg = 'Hello, ' + params['msg'] + '!'
         # else
