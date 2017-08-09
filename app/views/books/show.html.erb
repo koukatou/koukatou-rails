@@ -1,0 +1,30 @@
+<h1>Books#show</h1>
+<p><%= @books.title %>の書籍データ</p>
+
+<table width="30%">
+    <tr>
+        <th>ID</th>
+        <td><%= @books.id %></td>
+    </tr>
+    <tr>
+        <th>タイトル</th>
+        <td><%= @books.title %></td>
+    </tr>
+    <tr>
+        <th>著者</th>
+        <td><%= @books.author %></td>
+    </tr>
+    <tr>
+        <th>価格</th>
+        <td><%= @books.price %>円</td>
+    </tr>
+    <tr>
+        <th>出版社</th>
+        <td><%= @books.publisher %></td>
+    </tr>
+    <tr>
+        <th>コメント</th>
+        <td><%= @books.memo %></td>
+    </tr>
+</table>
+<a href="/books">TOPに戻る</a>

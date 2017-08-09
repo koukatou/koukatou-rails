@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+  get 'books/index'
+  get 'books', to: 'books#index'
+
+  get 'books/edit'
+
+  get 'books/add'
+  post 'books/add'
+  
+  get 'books/show/:id', to: 'books#show'
+
   get 'cards', to: 'cards#index'
   get 'cards/index'
 

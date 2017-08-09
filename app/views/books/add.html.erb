@@ -1,0 +1,26 @@
+<h1>Books#add</h1>
+<p>登録する書籍データを入力する</p>
+<table>
+    <%= form_for(@books, url:{controller:'books', action:'add'}) do |ad| %>
+    <tr>
+        <th>タイトル</th>
+        <td><%= ad.text_field :title , {size:30} %></td></tr>
+    <tr>
+        <th>著者名</th>
+        <td><%= ad.text_field :author , {size:20} %></td></tr>
+    <tr>
+        <th>価格</th>
+        <td><%= ad.number_field :price , {size:10} %></td></tr>
+    <tr>
+        <th>出版社名</th>
+        <td><%= ad.text_field :publisher , {size:20} %></td></tr>
+    <tr>
+        <th>コメント</th>
+        <td><%= ad.text_area :memo, {col:60, row:20} %></td></tr>
+    <tr>
+        <th></th>
+        <td><%= ad.submit "登録" %></td>
+    </tr>
+    <% end %>
+</table>
+<a href="/books">TOPに戻る</a>

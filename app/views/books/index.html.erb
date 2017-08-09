@@ -1,0 +1,18 @@
+<h1>Books#index</h1>
+<p>現在登録されている書籍の一覧です。</p>
+<table width="100%">
+    <tr>
+        <th>ID</th><th>タイトル</th>
+        <th>著者</th><th colspan="2"></th>
+    </tr>
+    <% @books.each do |b| %>
+    <tr>
+        <th width="15%"><%= b.id %></th>
+        <th width="30%"><a href="books/show/<%= b.id %>"><%= b.title %></a></th>
+        <th width="25%"><%= b.author %></th>
+        <th width="15%"><a href="/books/edit/<%= b.id %>">編集</a></th>
+        <th width="15%"><a href="">削除</a></th>
+    </tr>
+    <% end %>
+</table>
+<a href="/books/add">書籍の登録を行う</a>
