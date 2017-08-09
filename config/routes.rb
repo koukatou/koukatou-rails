@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get 'cards/edit/:id', to: 'cards#edit'
   patch 'cards/edit/:id', to: 'cards#edit'
   
-  get 'people/delete/:id', to: 'people#delete'
+  get 'cards/delete/:id', to: 'cards#delete'
   
   get 'cards/:id', to: 'cards#show'
   
