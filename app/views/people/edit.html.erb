@@ -1,8 +1,7 @@
 <h1>People#Edit</h1>
 <p><%= @msg %></p>
-<%= form_for(@person, url:{controller:'people', action:'update', id: @person.id}) do |form| %>
 <table>
-	<!--<%= form_for(@person, url:{controller:'people', action:'update', id: @person.id}) do |form| %>-->
+	<%= form_for(@person, url:{controller:'people', action:'update', id: @person.id}) do |form| %>
 	<tr><th>Name</th>
 		<td><%= form.text_field :name %></td></tr>
 	<tr><th>Age</th>
@@ -10,10 +9,8 @@
 	<tr><th>Mail</th>
 		<td><%= form.text_field :mail %></td></tr>
 	</tr>
-	</table>
-	<!--<tr><th></th>-->
-	<p><%= form.submit "送信" %></p>
-		<!--<td><%= form.submit "送信" %></td></tr>-->
-	<!--</tr>-->
+	<tr><th></th>
+		<td><%= form.submit "送信" %></td></tr>
+	</tr>
 	<% end %>
-<!--</table>-->
+</table>
