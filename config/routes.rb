@@ -1,11 +1,18 @@
 Rails.application.routes.draw do
+  get 'cards', to: 'cards#index'
   get 'cards/index'
 
-  get 'cards/show'
-
   get 'cards/add'
+  post 'cards/add'#, to: 'cards#add'
 
-  get 'cards/edit'
+  get 'cards/edit/:id', to: 'cards#edit'
+  patch 'cards/edit/:id', to: 'cards#edit'
+  
+  get 'people/delete/:id', to: 'people#delete'
+  
+  get 'cards/:id', to: 'cards#show'
+  
+  
 
   get 'people/index'
   get 'people', to: 'people#index'
@@ -19,11 +26,15 @@ Rails.application.routes.draw do
   get 'people/delete/:id', to: 'people#delete'
   
   get 'people/:id', to: 'people#show'
+  
+  
 
   get 'dengonban', to: 'dengonban#index'
   post 'dengonban', to: 'dengonban#index'
   get 'dengonban/index'
   post 'dengonban/index'
+  
+  
   
   get 'helo/index'
 	get 'helo', to: 'helo#index'
