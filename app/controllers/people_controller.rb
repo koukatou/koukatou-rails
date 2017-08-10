@@ -13,9 +13,16 @@ class PeopleController < ApplicationController
   
   def create
     if request.post? then
-      Person.create(person_params)
+      @person = Person.new(person_params)
+      if @person.save then
+        redirect_to '/people'
+      else
+        @msg = '入力に問題があります'
+        render 'add'
+      end
+    else
+      redirect_to '/people'
     end
-    redirect_to '/people'
   end
   
   def edit
