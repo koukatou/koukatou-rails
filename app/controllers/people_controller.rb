@@ -32,13 +32,16 @@ class PeopleController < ApplicationController
       end
   end
   
-  def find
+def find
 	@msg = 'please type search word...'
 	@people = Array.new
 	if request.post? then
-		@people = Person.where name: params['find']
+    f = params[:find].split(',')
+    @people = Person.all.limit(f[0]).offset(f[1])
+  else
+    @people = Person.all
 	end
-  end
+end
 
   
   def delete
